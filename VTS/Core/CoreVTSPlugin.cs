@@ -916,7 +916,21 @@ namespace VTS.Core
 		{
 			return await VTSExtensions.Async<VTSPostProcessingUpdateOptions, PostProcessingValue[], VTSPostProcessingUpdateResponseData, VTSErrorData>(SetPostProcessingEffectValues, options, values);
 		}
+		#endregion
 
+		#region Extendend trash
+		public void ExtendedDropImages(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemOptionsResponse> onSuccess, Action<VTSErrorData> onError)
+		{
+			VTSExtendedDropItemOptionsRequestData request = new VTSExtendedDropItemOptionsRequestData();
+			request.data.fileName = options.FileName;
+			request.data.scale = options.Scale;
+			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemOptionsResponse>(request, onSuccess, onError);
+		}
+
+		public async Task<VTSExtendedDropItemOptionsResponse> ExtendedDropImages(VTSExtendedDropItemOptions options)
+		{
+			return await VTSExtensions.Async<VTSExtendedDropItemOptions, VTSExtendedDropItemOptionsResponse, VTSErrorData>(ExtendedDropImages, options);
+		}
 		#endregion
 
 		#region VTS Event Subscription API Wrapper

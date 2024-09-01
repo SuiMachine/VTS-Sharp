@@ -1784,7 +1784,63 @@ namespace VTS.Core
 		public bool randomizeAll;
 		public float randomizeAllChaosLevel;
 	}
+	#endregion
 
+	#region Cursed Extended API
+	/// <summary>
+	/// This is en extended API function.
+	/// </summary>
+	[System.Serializable]
+	public class VTSExtendedDropItemOptions
+	{
+		public VTSExtendedDropItemOptions()
+		{
+			this.FileName = null;
+			this.Scale = 1;
+		}
+
+		public VTSExtendedDropItemOptions(string FileName, float Scale)
+		{
+			this.FileName = FileName;
+			this.Scale = Scale;
+		}
+
+		public string FileName;
+		public float Scale;
+	}
+
+	public class VTSExtendedDropItemOptionsRequestData : VTSMessageData
+	{
+		public VTSExtendedDropItemOptionsRequestData()
+		{
+			this.messageType = "ExtendedDropItemRequest";
+			this.data = new Data();
+		}
+		public Data data;
+
+		[System.Serializable]
+		public class Data
+		{
+			public string fileName;
+			public float scale;
+		}
+	}
+
+	[System.Serializable]
+	public class VTSExtendedDropItemOptionsResponse : VTSMessageData
+	{
+		public VTSExtendedDropItemOptionsResponse()
+		{
+			this.messageType = "VTSExtendedDropItemOptionsResponse";
+			this.data = new Data();
+		}
+		public Data data;
+
+		[System.Serializable]
+		public class Data
+		{
+		}
+	}
 	#endregion
 
 	#region Event API

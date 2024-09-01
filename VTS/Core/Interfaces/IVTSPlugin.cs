@@ -1280,5 +1280,9 @@ namespace VTS.Core
 		/// <param name="options">Configuration options about the request.</param>
 		/// <param name="values">A list of post processing parameters to update.</param>
 		Task<VTSPostProcessingUpdateResponseData> SetPostProcessingEffectValues(VTSPostProcessingUpdateOptions options, PostProcessingValue[] values);
+
+		//Extended stuff
+		void ExtendedDropImages(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemOptionsResponse> onSuccess, Action<VTSErrorData> onError);
+		Task<VTSExtendedDropItemOptionsResponse> ExtendedDropImages(VTSExtendedDropItemOptions options);
 	}
 }
