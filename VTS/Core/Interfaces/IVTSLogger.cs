@@ -1,11 +1,13 @@
 ﻿using System;
 
-namespace VTS.Core {
+namespace VTS.Core
+{
 
 	/// <summary>
 	/// Interface for providing a logging implementation.
 	/// </summary>
-	public interface IVTSLogger {
+	public interface IVTSLogger
+	{
 		/// <summary>
 		/// Logs a message.
 		/// </summary>

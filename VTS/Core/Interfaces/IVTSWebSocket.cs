@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VTS.Core {
-
-	public interface IVTSWebSocket {
+namespace VTS.Core
+{
+	public interface IVTSWebSocket
+	{
 		/// <summary>
 		/// The port number of the socket.
 		/// </summary>

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace VTS.Core {
+namespace VTS.Core
+{
 
 	/// <summary>
 	/// Interface for providing Plugin implementation.
 	/// </summary>
-	public interface IVTSPlugin {
+	public interface IVTSPlugin
+	{
 		/// <summary>
 		/// The name of this plugin. Required for authorization purposes.
 		/// </summary>

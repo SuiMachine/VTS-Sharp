@@ -1,9 +1,11 @@
-﻿namespace VTS.Core {
+﻿\namespace VTS.Core
+{
 
 	/// <summary>
 	/// Interface for providing an Auth Token Storage implementation.
 	/// </summary>
-	public interface ITokenStorage {
+	public interface ITokenStorage
+	{
 		/// <summary>
 		/// Loads the auth token.
 		/// </summary>

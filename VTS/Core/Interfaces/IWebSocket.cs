@@ -1,11 +1,13 @@
 ﻿using System;
 
-namespace VTS.Core {
+namespace VTS.Core
+{
 
 	/// <summary>
 	/// Interface for providing a websocket implementation.
 	/// </summary>
-	public interface IWebSocket {
+	public interface IWebSocket
+	{
 		/// <summary>
 		/// Fetches the next response to process.
 		/// </summary>

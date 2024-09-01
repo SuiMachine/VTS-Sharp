@@ -1,9 +1,10 @@
-﻿namespace VTS.Core {
-
+﻿namespace VTS.Core
+{
 	/// <summary>
 	/// Interface for providing a JSON Serializer/Deserializer implementation.
 	/// </summary>
-	public interface IJsonUtility {
+	public interface IJsonUtility
+	{
 		/// <summary>
 		/// Deserializes a JSON string into an object of the specified type.
 		/// </summary>
