@@ -1,4 +1,4 @@
-﻿\namespace VTS.Core
+﻿namespace VTS.Core
 {
 
 	/// <summary>
