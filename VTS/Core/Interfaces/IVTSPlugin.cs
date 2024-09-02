@@ -1282,7 +1282,7 @@ namespace VTS.Core
 		Task<VTSPostProcessingUpdateResponseData> SetPostProcessingEffectValues(VTSPostProcessingUpdateOptions options, PostProcessingValue[] values);
 
 		//Extended stuff
-		void ExtendedDropImages(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemOptionsResponse> onSuccess, Action<VTSErrorData> onError);
-		Task<VTSExtendedDropItemOptionsResponse> ExtendedDropImages(VTSExtendedDropItemOptions options);
+		void ExtendedDropItem(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemResponse> onSuccess, Action<VTSErrorData> onError);
+		Task<VTSExtendedDropItemResponse> ExtendedDropItem(VTSExtendedDropItemOptions options);
 	}
 }

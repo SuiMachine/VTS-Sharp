@@ -919,17 +919,17 @@ namespace VTS.Core
 		#endregion
 
 		#region Extendend trash
-		public void ExtendedDropImages(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemOptionsResponse> onSuccess, Action<VTSErrorData> onError)
+		public void ExtendedDropItem(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemResponse> onSuccess, Action<VTSErrorData> onError)
 		{
 			VTSExtendedDropItemOptionsRequestData request = new VTSExtendedDropItemOptionsRequestData();
-			request.data.fileName = options.FileName;
-			request.data.scale = options.Scale;
-			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemOptionsResponse>(request, onSuccess, onError);
+			request.data.fileName = options.fileName;
+			request.data.scale = options.scale;
+			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemResponse>(request, onSuccess, onError);
 		}
 
-		public async Task<VTSExtendedDropItemOptionsResponse> ExtendedDropImages(VTSExtendedDropItemOptions options)
+		public async Task<VTSExtendedDropItemResponse> ExtendedDropItem(VTSExtendedDropItemOptions options)
 		{
-			return await VTSExtensions.Async<VTSExtendedDropItemOptions, VTSExtendedDropItemOptionsResponse, VTSErrorData>(ExtendedDropImages, options);
+			return await VTSExtensions.Async<VTSExtendedDropItemOptions, VTSExtendedDropItemResponse, VTSErrorData>(ExtendedDropItem, options);
 		}
 		#endregion
 

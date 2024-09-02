@@ -1795,18 +1795,18 @@ namespace VTS.Core
 	{
 		public VTSExtendedDropItemOptions()
 		{
-			this.FileName = null;
-			this.Scale = 1;
+			this.fileName = "";
+			this.scale = 1;
 		}
 
 		public VTSExtendedDropItemOptions(string FileName, float Scale)
 		{
-			this.FileName = FileName;
-			this.Scale = Scale;
+			this.fileName = FileName;
+			this.scale = Scale;
 		}
 
-		public string FileName;
-		public float Scale;
+		public string fileName;
+		public float scale;
 	}
 
 	public class VTSExtendedDropItemOptionsRequestData : VTSMessageData
@@ -1827,11 +1827,11 @@ namespace VTS.Core
 	}
 
 	[System.Serializable]
-	public class VTSExtendedDropItemOptionsResponse : VTSMessageData
+	public class VTSExtendedDropItemResponse : VTSMessageData
 	{
-		public VTSExtendedDropItemOptionsResponse()
+		public VTSExtendedDropItemResponse()
 		{
-			this.messageType = "VTSExtendedDropItemOptionsResponse";
+			this.messageType = "ExtendedDropItemResponse";
 			this.data = new Data();
 		}
 		public Data data;
@@ -1839,6 +1839,12 @@ namespace VTS.Core
 		[System.Serializable]
 		public class Data
 		{
+			public bool success;
+
+			public Data()
+			{
+				success = false;
+			}
 		}
 	}
 	#endregion
