@@ -1796,17 +1796,17 @@ namespace VTS.Core
 		public VTSExtendedDropItemOptions()
 		{
 			this.fileName = "";
-			this.scale = 1;
+			this.count = 1;
 		}
 
-		public VTSExtendedDropItemOptions(string FileName, float Scale)
+		public VTSExtendedDropItemOptions(string FileName, int Count)
 		{
 			this.fileName = FileName;
-			this.scale = Scale;
+			this.count = Count;
 		}
 
 		public string fileName;
-		public float scale;
+		public int count;
 	}
 
 	[System.Serializable]
@@ -1823,7 +1823,7 @@ namespace VTS.Core
 		public class Data
 		{
 			public string fileName;
-			public float scale;
+			public int count;
 		}
 	}
 

@@ -923,7 +923,9 @@ namespace VTS.Core
 		{
 			VTSExtendedDropItemOptionsRequestData request = new VTSExtendedDropItemOptionsRequestData();
 			request.data.fileName = options.fileName;
-			request.data.scale = options.scale;
+			if (options.count < 0)
+				options.count = 1;
+			request.data.count = options.count;
 			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemResponse>(request, onSuccess, onError);
 		}
 
