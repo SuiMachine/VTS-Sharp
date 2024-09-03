@@ -1809,6 +1809,7 @@ namespace VTS.Core
 		public float scale;
 	}
 
+	[System.Serializable]
 	public class VTSExtendedDropItemOptionsRequestData : VTSMessageData
 	{
 		public VTSExtendedDropItemOptionsRequestData()

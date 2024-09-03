@@ -927,9 +927,9 @@ namespace VTS.Core
 			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemResponse>(request, onSuccess, onError);
 		}
 
-		public async Task<VTSExtendedDropItemResponse> ExtendedDropItem(VTSExtendedDropItemOptions options)
+		public Task<VTSExtendedDropItemResponse> ExtendedDropItem(VTSExtendedDropItemOptions options)
 		{
-			return await VTSExtensions.Async<VTSExtendedDropItemOptions, VTSExtendedDropItemResponse, VTSErrorData>(ExtendedDropItem, options);
+			return VTSExtensions.Async<VTSExtendedDropItemOptions, VTSExtendedDropItemResponse, VTSErrorData>(ExtendedDropItem, options);
 		}
 		#endregion
 

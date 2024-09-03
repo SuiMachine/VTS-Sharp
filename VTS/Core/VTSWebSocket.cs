@@ -556,6 +556,9 @@ namespace VTS.Core
 									case "EventSubscriptionResponse":
 										this._callbacks[response.requestID].onSuccess(this._json.FromJson<VTSEventSubscriptionResponseData>(data));
 										break;
+									case "ExtendedDropItemResponse":
+										this._callbacks[response.requestID].onSuccess(this._json.FromJson<VTSExtendedDropItemResponse>(data));
+										break;
 									default:
 										VTSErrorData error = new VTSErrorData();
 										error.data.message = "Unable to parse response as valid response type: " + data;
