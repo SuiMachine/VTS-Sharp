@@ -100,7 +100,8 @@ namespace VTS.Core
 						// Otherwise, collect the result
 						string text = Encoding.UTF8.GetString(UDP_RESULT.Result.Buffer);
 						IPAddress address = MapAddress(UDP_RESULT.Result.RemoteEndPoint.Address);
-						UDP_RESULT.Dispose();
+						if(UDP_RESULT != null)
+							UDP_RESULT.Dispose();
 						UDP_RESULT = null;
 						VTSStateBroadcastData data = this._json.FromJson<VTSStateBroadcastData>(text);
 						// New IP addresses get new records made
