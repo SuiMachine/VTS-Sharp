@@ -919,7 +919,7 @@ namespace VTS.Core
 		#endregion
 
 		#region Extendend trash
-		public void ExtendedDropItem(VTSExtendedDropItemOptions options, Action<VTSExtendedDropItemResponse> onSuccess, Action<VTSErrorData> onError)
+		public void ExtendedDropItem(VTSExtendedDropItemRequest options, Action<VTSExtendedDropItemResponse> onSuccess, Action<VTSErrorData> onError)
 		{
 			VTSExtendedDropItemOptionsRequestData request = new VTSExtendedDropItemOptionsRequestData();
 			request.data.fileName = options.fileName;
@@ -929,9 +929,9 @@ namespace VTS.Core
 			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemResponse>(request, onSuccess, onError);
 		}
 
-		public Task<VTSExtendedDropItemResponse> ExtendedDropItem(VTSExtendedDropItemOptions options)
+		public Task<VTSExtendedDropItemResponse> ExtendedDropItem(VTSExtendedDropItemRequest options)
 		{
-			return VTSExtensions.Async<VTSExtendedDropItemOptions, VTSExtendedDropItemResponse, VTSErrorData>(ExtendedDropItem, options);
+			return VTSExtensions.Async<VTSExtendedDropItemRequest, VTSExtendedDropItemResponse, VTSErrorData>(ExtendedDropItem, options);
 		}
 		#endregion
 

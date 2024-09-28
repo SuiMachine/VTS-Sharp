@@ -1791,22 +1791,51 @@ namespace VTS.Core
 	/// This is en extended API function.
 	/// </summary>
 	[System.Serializable]
-	public class VTSExtendedDropItemOptions
+	public class VTSExtendedDropItemRequest
 	{
-		public VTSExtendedDropItemOptions()
+		public VTSExtendedDropItemRequest()
 		{
 			this.fileName = "";
 			this.count = 1;
+			this.dropDefinition = new VTSExtendedDropItemDefinition();
 		}
 
-		public VTSExtendedDropItemOptions(string FileName, int Count)
+		public VTSExtendedDropItemRequest(string fileName, int count)
 		{
-			this.fileName = FileName;
-			this.count = Count;
+			this.fileName = fileName;
+			this.count = count;
+			this.dropDefinition = new VTSExtendedDropItemDefinition();
+		}
+
+		public VTSExtendedDropItemRequest(string fileName, int count, VTSExtendedDropItemDefinition dropDefinition)
+		{
+			this.fileName = fileName;
+			this.count = count;
+			this.dropDefinition = dropDefinition;
 		}
 
 		public string fileName;
 		public int count;
+		public VTSExtendedDropItemDefinition dropDefinition;
+	}
+
+	[Serializable]
+	public class VTSExtendedDropItemDefinition
+	{
+		public bool normalizeScale = false;
+		public bool startWithSmoothBorder = true;
+		public float lifeTime = 3.0f;
+		public float opacity = 1.0f;
+		public float animationSpeed = 1.0f;
+		public float gravity = 1.0f;
+		public float sizeScale = 1f;
+		public float dropSpeed = 0.6f;
+		public float bounciness = 0.4f;
+		public float rotation = 1.0f;
+		public int bottomEdgeBounce = 2;
+		public int topEdgeBounce = 2;
+		public int leftEdgeBounce = 2;
+		public int rightEdgeBounce = 2;
 	}
 
 	[System.Serializable]
