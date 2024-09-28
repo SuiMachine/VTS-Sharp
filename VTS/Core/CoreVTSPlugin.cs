@@ -926,6 +926,7 @@ namespace VTS.Core
 			if (options.count < 0)
 				options.count = 1;
 			request.data.count = options.count;
+			request.data.dropDefinition = options.dropDefinition;
 			this.Socket.Send<VTSExtendedDropItemOptionsRequestData, VTSExtendedDropItemResponse>(request, onSuccess, onError);
 		}
 

@@ -215,7 +215,6 @@ namespace VTS.Core
 		public float positionY = float.NaN;
 		public float rotation = float.NaN;
 		public float size = float.NaN;
-
 	}
 
 	[System.Serializable]
@@ -1853,6 +1852,7 @@ namespace VTS.Core
 		{
 			public string fileName;
 			public int count;
+			public VTSExtendedDropItemDefinition dropDefinition;
 		}
 	}
 
