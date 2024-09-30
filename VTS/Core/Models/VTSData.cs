@@ -1826,6 +1826,7 @@ namespace VTS.Core
 		public float lifeTime = 3.0f;
 		public float opacity = 1.0f;
 		public float animationSpeed = 1.0f;
+		public float disappearTime = 3.0f;
 		public float gravity = 1.0f;
 		public float sizeScale = 1f;
 		public float dropSpeed = 0.6f;
