@@ -201,28 +201,39 @@ namespace VTS.Core
 
 		public bool SetPort(int port)
 		{
-			_logger.Log(string.Format("Setting port: {0}...", port));
+			if (this._logger != null)
+				_logger.Log(string.Format("Setting port: {0}...", port));
+
 			this._port = port;
 			if (PORTS_BY_IP.ContainsKey(this._ip) && PORTS_BY_IP[this._ip].ContainsKey(port))
 			{
-				this._logger.Log(string.Format("Port {0} is a known VTube Studio Port.", port));
+				if (this._logger != null)
+					this._logger.Log(string.Format("Port {0} is a known VTube Studio Port.", port));
 				return true;
 			}
-			this._logger.LogWarning(string.Format("Port {0} is not a known VTube Studio Port!", port));
+
+			if (this._logger != null)
+				this._logger.LogWarning(string.Format("Port {0} is not a known VTube Studio Port!", port));
 			return false;
 		}
 
 		public bool SetIPAddress(string ipString)
 		{
 			IPAddress address;
-			this._logger.Log(string.Format("Setting IP address: {0}...", ipString));
+			if(this._logger != null)
+				this._logger.Log(string.Format("Setting IP address: {0}...", ipString));
+
 			if (IPAddress.TryParse(ipString, out address))
 			{
 				this._ip = MapAddress(address);
-				this._logger.Log(string.Format("IP address {0} is valid IPv4 format.", ipString));
+
+				if (this._logger != null)
+					this._logger.Log(string.Format("IP address {0} is valid IPv4 format.", ipString));
 				return true;
 			}
-			this._logger.LogWarning(string.Format("IP address {0} is not valid IPv4 format! Unable to set.", ipString));
+
+			if (this._logger != null)
+				this._logger.LogWarning(string.Format("IP address {0} is not valid IPv4 format! Unable to set.", ipString));
 			return false;
 		}
 
